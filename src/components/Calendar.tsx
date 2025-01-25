@@ -1,14 +1,6 @@
+import { useState } from "react";
 import { useGlobalContext } from "../GlobalContext";
-
-/*interface DateType {
-  month: number;
-  year: number;
-}
-
-interface CalendarProps {
-  nextMonth: () => void;
-  date: DateType;
-}*/
+import Event from "./Event";
 
 const monthNames = [
   "JAN",
@@ -28,6 +20,8 @@ const monthNames = [
 export default function Calendar() {
   const { date, setDate, balance, setBalance, income, expense } =
     useGlobalContext();
+  const [showEvent, setShowEvent] = useState(false);
+  const [randomNumber, setRandomNumber] = useState(0);
 
   function nextMonth() {
     if (date.month === 12) {
@@ -36,17 +30,23 @@ export default function Calendar() {
       setDate({ month: date.month + 1, year: date.year });
     }
     setBalance(balance + (income - expense));
-    console.log("month" + balance);
+    setRandomNumber(Math.floor(Math.random() * 20));
+    setShowEvent(true);
   }
 
   return (
-    <div className="absolute bottom-0 w-full h-[100px] flex justify-center items-center cursor-pointer">
-      <div
-        onClick={nextMonth}
-        className="h-[100px] w-[140px] bg-[url(/calendar.png)] bg-contain flex justify-center items-center"
-      >
-        <p className="mt-[1.5rem]">{monthNames[date.month - 1]}</p>
+    <>
+      <div className="absolute bottom-0 w-full h-[100px] flex justify-center items-center cursor-pointer">
+        <div
+          onClick={nextMonth}
+          className="h-[100px] w-[140px] bg-[url(/calendar.png)] bg-contain flex justify-center items-center"
+        >
+          <p className="mt-[1.5rem]">{monthNames[date.month - 1]}</p>
+        </div>
       </div>
-    </div>
+      {showEvent && (
+        <Event setShowEvent={setShowEvent} randomNumber={randomNumber} />
+      )}
+    </>
   );
 }

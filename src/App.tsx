@@ -1,5 +1,4 @@
 import { GlobalProvider } from "./GlobalContext";
-import Event from "./components/Event";
 import Wallet from "./components/Wallet";
 import House from "./components/House";
 import Calendar from "./components/Calendar";
@@ -8,7 +7,6 @@ export default function App() {
   return (
     <GlobalProvider>
       <div className="relative h-[720px] w-[1280px] text-[2rem] leading-none bg-[url(/map.png)] bg-contain cursor-default text-dkgrey select-none">
-        <Event />
         <Wallet />
         <House
           cost={80000}
@@ -111,14 +109,14 @@ export default function App() {
         />
 
         <House
-          cost={10000000}
+          cost={1000000}
           houseIncome={500000}
           top="400px"
           left="1100px"
           style="castle"
         />
         <House
-          cost={10000000}
+          cost={1000000}
           houseIncome={500000}
           top="520px"
           left="580px"

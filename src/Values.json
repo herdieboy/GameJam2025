@@ -1,19 +1,104 @@
 {
   "events": [
     {
-      "title": "You just got paid!",
-      "description": "lorem ipsum dolor sit amet",
-      "result": 1000
+      "title": "Parental Support",
+      "description": "Your parents don't understand what you do for a living so they send you 500 just in case",
+      "result": 500
     },
     {
-      "title": "You trgfjust got paid!",
-      "description": "lorem ipsum dolor sit amet",
-      "result": 1000
+      "title": "Inheritance",
+      "description": "Your great great great aunt passed away leaving you 10,000 in her will",
+      "result": 10000
     },
     {
-      "title": "You just tgefgot pffrfrfraid!",
-      "description": "lorem ipsum dolor sit amet",
-      "result": 1000
+      "title": "Council Holiday",
+      "description": "The local council want to go on holiday, tax has increased by 1000 this month",
+      "result": -1000
+    },
+    {
+      "title": "Court Fees",
+      "description": "Your tenants sued you for leaving them without heating for a month. You must pay 3000 in court fees",
+      "result": -3000
+    },
+    {
+      "title": "Rising Grocery Prices",
+      "description": "You noticed the grocery prices have gone up, so you raised your rent by 4000 this month to match the market",
+      "result": 4000
+    },
+    {
+      "title": "Cover it with Paint",
+      "description": "You manage to cover up the ceiling mould on one of your properties with paint, you gain 3000 in savings",
+      "result": 3000
+    },
+    {
+      "title": "Taking a Chance on New Tech",
+      "description": "You took a chance and invested in a tech start-up's stocks, you gain 30,000!",
+      "result": 30000
+    },
+    {
+      "title": "Who Needs to Stay Warm?",
+      "description": "Instead of using good quality insulation you find some cotton wool and use that instead, saving you 50,000",
+      "result": 50000
+    },
+    {
+      "title": "Rental Equality",
+      "description": "The government pretended to care about rental equality this month, you must pay 30,000 in compensation",
+      "result": -30000
+    },
+    {
+      "title": "The Ex, Ex, Ex, Ex-Wife",
+      "description": "Your fourth ex-wife is demanding alimony, pay 20,000",
+      "result": -20000
+    },
+    {
+      "title": "One in a Million(ish)",
+      "description": "That lottery ticket you took a chance on, paid off, you gain 8000",
+      "result": 8000
+    },
+    {
+      "title": "We All Know Which One…",
+      "description": "You went to see that sci-fi prequel movie in the cinema, you lose 1000 (and hours of your life you will never get back)",
+      "result": -1000
+    },
+    {
+      "title": "Hide Your Tracks Better Next Time",
+      "description": "Your tenants noticed you charging them too much each month, you must pay 10,000 in compensation",
+      "result": -10000
+    },
+    {
+      "title": "Bliporg Zigzorg, WEE WOO WEE WOO",
+      "description": "Oh no! It's the aliens again! You must pay 12345 to your overlords",
+      "result": -12345
+    },
+    {
+      "title": "At Least No One Got Hurt…Right?",
+      "description": "The rental agency noticed that the roof of one of your properties is not up to code, you must pay 80,000 in repairs",
+      "result": -80000
+    },
+    {
+      "title": "It's SOOO Hard Being Rich",
+      "description": "You have so much money already! Here is 100,000 for no reason whatsoever",
+      "result": 100000
+    },
+    {
+      "title": "The Royal Flush",
+      "description": "The cheap toilet you used in the bathroom hasn't broken yet, you gain 40,000 in savings",
+      "result": 40000
+    },
+    {
+      "title": "Fun is a Distraction",
+      "description": "Your no pets, no parties, no candles, no artwork, no fun, no joy renting policy has paid off. You gain 25,000 in money saved",
+      "result": 25000
+    },
+    {
+      "title": "Ughh, Women…Am I Right??",
+      "description": "Your wife left you and you need to take your anger out on someone. You raise the rent by 5000 this month",
+      "result": 5000
+    },
+    {
+      "title": "This Younger Generation Don't Know Hardwork",
+      "description": "You noticed one of your tenants missed their rent after losing their job. You raise their rent by 3000 this month to teach them a lesson on working hard.",
+      "result": 3000
     }
   ]
 }
