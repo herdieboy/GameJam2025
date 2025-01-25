@@ -9,6 +9,7 @@ interface houseTypes {
   houseIncome: number;
   top: string;
   left: string;
+  style: string;
 }
 
 export default function House({
@@ -20,6 +21,7 @@ export default function House({
   houseIncome,
   top,
   left,
+  style,
 }: houseTypes) {
   const [isBought, setIsBought] = useState(false);
 
@@ -34,11 +36,13 @@ export default function House({
   return (
     <div
       onClick={clickHouse}
-      className="bg-[#9a4f50] flex flex-col items-center text-[1rem] absolute cursor-pointer"
-      style={{ top: top, left: left }}
+      className="h-[100px] w-[140px] bg-contain flex flex-col items-center text-[1rem] absolute cursor-pointer group"
+      style={{ top: top, left: left, backgroundImage: `url(/${style}.png)` }}
     >
-      <p>{!isBought ? "Buy:" + cost : "Owned"}</p>
-      <p>Rent Income: {houseIncome}</p>
+      <div className="invisible group-hover:visible text-center bg-white border-4 p-[0.5rem] m-auto">
+        <p>{!isBought ? "Buy:" + cost : "Owned"}</p>
+        <p>Rent Income: {houseIncome}</p>
+      </div>
     </div>
   );
 }

@@ -3,10 +3,14 @@
 
 @theme {
   --font-display: "Jersey 10", "sans-serif";
+
+  --color-dkgrey: #433455;
+  --color-white: #e3e4db;
 }
 
 body {
   font-family: "Jersey 10", serif;
   font-weight: 400;
   font-style: normal;
+  image-rendering: pixelated;
 }
