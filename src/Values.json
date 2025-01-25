@@ -1,8 +1,19 @@
 {
-  "houses": {
-    "house1": {
-      "cost": 100000,
-      "upgrade": 1000
+  "events": [
+    {
+      "title": "You just got paid!",
+      "description": "lorem ipsum dolor sit amet",
+      "result": 1000
+    },
+    {
+      "title": "You trgfjust got paid!",
+      "description": "lorem ipsum dolor sit amet",
+      "result": 1000
+    },
+    {
+      "title": "You just tgefgot pffrfrfraid!",
+      "description": "lorem ipsum dolor sit amet",
+      "result": 1000
     }
-  }
+  ]
 }

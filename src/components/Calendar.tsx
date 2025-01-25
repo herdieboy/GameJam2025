@@ -1,4 +1,6 @@
-interface DateType {
+import { useGlobalContext } from "../GlobalContext";
+
+/*interface DateType {
   month: number;
   year: number;
 }
@@ -6,7 +8,7 @@ interface DateType {
 interface CalendarProps {
   nextMonth: () => void;
   date: DateType;
-}
+}*/
 
 const monthNames = [
   "JAN",
@@ -23,7 +25,20 @@ const monthNames = [
   "DEC",
 ];
 
-export default function Calendar({ nextMonth, date }: CalendarProps) {
+export default function Calendar() {
+  const { date, setDate, balance, setBalance, income, expense } =
+    useGlobalContext();
+
+  function nextMonth() {
+    if (date.month === 12) {
+      setDate({ month: 1, year: date.year + 1 });
+    } else {
+      setDate({ month: date.month + 1, year: date.year });
+    }
+    setBalance(balance + (income - expense));
+    console.log("month" + balance);
+  }
+
   return (
     <div className="absolute bottom-0 w-full h-[100px] flex justify-center items-center cursor-pointer">
       <div
