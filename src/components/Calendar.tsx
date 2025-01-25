@@ -18,8 +18,7 @@ const monthNames = [
 ];
 
 export default function Calendar() {
-  const { date, setDate, balance, setBalance, income, expense } =
-    useGlobalContext();
+  const { date, setDate, balance, setBalance, income } = useGlobalContext();
   const [showEvent, setShowEvent] = useState(false);
   const [randomNumber, setRandomNumber] = useState(0);
 
@@ -29,9 +28,11 @@ export default function Calendar() {
     } else {
       setDate({ month: date.month + 1, year: date.year });
     }
-    setBalance(balance + (income - expense));
-    setRandomNumber(Math.floor(Math.random() * 20));
-    setShowEvent(true);
+    setBalance(balance + income);
+    setRandomNumber(Math.floor(Math.random() * 100));
+    if (randomNumber < 20) {
+      setShowEvent(true);
+    }
   }
 
   return (

@@ -34,14 +34,14 @@ export default function App() {
           houseIncome={3000}
           top="300px"
           left="205px"
-          style="house3"
+          style="house1"
         />
         <House
           cost={80000}
           houseIncome={3000}
           top="540px"
           left="160px"
-          style="house3"
+          style="house2"
         />
         <House
           cost={80000}
@@ -55,14 +55,14 @@ export default function App() {
           houseIncome={3000}
           top="110px"
           left="890px"
-          style="house3"
+          style="house1"
         />
         <House
           cost={80000}
           houseIncome={3000}
           top="80px"
           left="990px"
-          style="house3"
+          style="house2"
         />
 
         <House
@@ -70,13 +70,6 @@ export default function App() {
           houseIncome={10000}
           top="300px"
           left="480px"
-          style="apartment"
-        />
-        <House
-          cost={200000}
-          houseIncome={10000}
-          top="380px"
-          left="390px"
           style="apartment"
         />
         <House

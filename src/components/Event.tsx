@@ -8,18 +8,19 @@ interface EventProps {
 
 export default function Event({ randomNumber, setShowEvent }: EventProps) {
   const { balance, setBalance } = useGlobalContext();
+  const eventNumber = randomNumber < 21 ? randomNumber : 0;
 
   function handleButton() {
-    setBalance(balance + Values.events[randomNumber].result);
+    setBalance(balance + Values.events[eventNumber].result);
     setShowEvent(false);
   }
 
   return (
     <div className="absolute text-center top-0 z-50 w-full h-full flex justify-center items-center">
       <div className="bg-white w-[500px] h-[500px] border-4 flex flex-col items-center justify-center">
-        <h1>{Values.events[randomNumber].title}</h1>
+        <h1>{Values.events[eventNumber].title}</h1>
         <p className="text-[1rem] p-[2rem]">
-          {Values.events[randomNumber].description}
+          {Values.events[eventNumber].description}
         </p>
         <button
           onClick={handleButton}

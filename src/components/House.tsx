@@ -16,13 +16,13 @@ export default function House({
   left,
   style,
 }: HouseProps) {
-  const { balance, setBalance, income, setIncome, setDate, date, expense } =
+  const { balance, setBalance, income, setIncome, setDate, date } =
     useGlobalContext();
   const [isBought, setIsBought] = useState(false);
 
   function clickHouse() {
     if (!isBought && balance >= cost) {
-      setBalance(balance - cost + (income - expense));
+      setBalance(balance - cost + income);
       setIncome(income + houseIncome);
       setIsBought(true);
 
@@ -38,14 +38,18 @@ export default function House({
     <div
       onClick={clickHouse}
       className="h-[100px] w-[140px] bg-contain flex flex-col items-center text-[1rem] absolute cursor-pointer group"
-      style={{ top: top, left: left, backgroundImage: `url(/${style}.png)` }}
+      style={{
+        top: top,
+        left: left,
+        backgroundImage: `url(/${isBought ? style + "_owned" : style}.png)`,
+      }}
     >
       <div
         className={`invisible group-hover:visible text-center ${
           balance < cost ? "bg-[#6f6776]" : "bg-white"
         } border-4 p-[0.5rem] m-auto`}
       >
-        <p>{!isBought ? "Buy:" + cost : "Owned"}</p>
+        <p>{!isBought ? "Buy: " + cost : "Owned"}</p>
         <p>Rent Income: {houseIncome}</p>
       </div>
     </div>
