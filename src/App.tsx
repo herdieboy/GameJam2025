@@ -64,6 +64,13 @@ export default function App() {
                 It is time to buy and upgrade homes to build your empire and
                 hope the financial market stays stable and that this bubble
                 doesn't burst...
+                <br />
+                <br />
+                Each action costs a month. Click the calendar to skip a month
+                and collect rent.
+                <br />
+                Chance events may appear, which could make you rich, or bankrupt
+                you, so be careful!
               </p>
               <button
                 onClick={handlePlayAudio}
