@@ -17,9 +17,9 @@ export default function Wallet() {
         </div>
       </div>
       {balance < 0 ? (
-        <div className="absolute top-0 w-full h-full flex flex-col items-center justify-center text-[10rem] z-[99] text-[#9a4f50]">
-          <p className="drop-shadow-[4px_4px_0_black]">GAME OVER</p>
-          <a href="" className="text-[2rem] drop-shadow-[2px_2px_0_black]">
+        <div className="bg-dkgrey text-center absolute top-0 w-full h-full flex flex-col items-center justify-center text-[10rem] z-[99] text-[#9a4f50]">
+          <p className="">GAME OVER</p>
+          <a href="" className="text-[2rem]">
             Start Again
           </a>
         </div>
@@ -27,9 +27,18 @@ export default function Wallet() {
         <></>
       )}
       {date.year === 2007 ? (
-        <div className="absolute top-0 w-full h-full flex flex-col items-center justify-center text-[10rem] z-[99] text-[#7ca1c0]">
-          <p className="drop-shadow-[4px_4px_0_black]">THE BUBBLE HAS BURST</p>
-          <a href="" className="text-[2rem] drop-shadow-[2px_2px_0_black]">
+        <div className="bg-dkgrey text-center absolute top-0 w-full h-full flex flex-col items-center justify-center text-[10rem] z-[99] text-[#7ca1c0]">
+          <p className="">THE BUBBLE HAS BURST</p>
+          <p className="text-[2rem] px-[2rem]">
+            The 2007 financial crisis caused the housing bubble to finally
+            burst,
+            <br />
+            leaving too many people either in debt, unemployed, without homes,
+            or all of the above. <br />
+            Some people never financially recovered and some people…well, they
+            became billionaires!
+          </p>
+          <a href="" className="text-[2rem] mt-[2rem]">
             Start Again
           </a>
         </div>

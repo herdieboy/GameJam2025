@@ -46,6 +46,7 @@ export default function App() {
         style={{ transform: `scale(${divScale})` }}
       >
         <audio id="background-music" src={backgroundMusic} autoPlay loop />
+
         <Wallet />
 
         <House
@@ -128,7 +129,7 @@ export default function App() {
           upIncome={7500}
           top="300px"
           left="480px"
-          style="apartment"
+          style="apartment2"
         />
         <House
           cost={200000}
@@ -137,7 +138,7 @@ export default function App() {
           upIncome={7500}
           top="380px"
           left="390px"
-          style="apartment"
+          style="apartment2"
         />
         <House
           cost={200000}
@@ -146,7 +147,7 @@ export default function App() {
           upIncome={7500}
           top="420px"
           left="520px"
-          style="apartment"
+          style="apartment2"
         />
         <House
           cost={180000}
@@ -185,6 +186,12 @@ export default function App() {
           left="580px"
           style="castle"
         />
+
+        <div className="h-[180px] w-[275px] bg-white border-4 absolute bottom-5 right-6 flex flex-col items-center justify-center">
+          <p className="text-[1.5rem]">Welcome to</p>
+          <p className="text-[3rem] text-[#416aa3]">Bubbleton</p>
+          <p className="text-[1.5rem]">Make your fortune!</p>
+        </div>
 
         <Calendar />
       </div>
