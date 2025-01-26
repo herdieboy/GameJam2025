@@ -54,13 +54,16 @@ export default function App() {
         <audio id="background-music" src={backgroundMusic} autoPlay loop />
         {!audioPlayed && (
           <div className="absolute z-[99] w-full h-full flex justify-center items-center">
-            <div className="bg-white p-[2rem] m-[2rem] text-center">
+            <div className="bg-white p-[3rem] m-[2rem] text-center border-4">
               <p>
                 The year is 2000 and you have been given an offer you can't
-                refuse...A bank loan for a mortgage of ß100,000 with no
-                security! It is time to buy and upgrade homes to build your
-                empire and hope the financial market stays stable and that this
-                bubble doesn't burst...
+                refuse...
+                <br />A bank loan for a mortgage of ß100,000 with no security!
+                <br />
+                <br />
+                It is time to buy and upgrade homes to build your empire and
+                hope the financial market stays stable and that this bubble
+                doesn't burst...
               </p>
               <button
                 onClick={handlePlayAudio}

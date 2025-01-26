@@ -17,33 +17,40 @@ export default function Wallet() {
         </div>
       </div>
       {balance < 0 ? (
-        <div className="bg-dkgrey text-center absolute top-0 w-full h-full flex flex-col items-center justify-center text-[10rem] z-[99] text-[#9a4f50]">
-          <p className="">GAME OVER</p>
-          <a href="" className="text-[2rem] bg-[#be955c] p-[1rem] border-4">
-            Start Again
-          </a>
+        <div className=" text-center absolute top-0 w-full h-full flex flex-col items-center justify-center text-[8rem] z-[99] text-[#9a4f50]">
+          <div className="bg-white p-[3rem] m-[2rem] text-center border-4 border-dkgrey">
+            <p className="">GAME OVER</p>
+            <a
+              href=""
+              className="text-[2rem] bg-[#be955c] p-[1rem] border-4 text-dkgrey"
+            >
+              Start Again
+            </a>
+          </div>
         </div>
       ) : (
         <></>
       )}
       {date.year === 2007 ? (
-        <div className="bg-dkgrey text-center absolute top-0 w-full h-full flex flex-col items-center justify-center text-[10rem] z-[99] text-[#7ca1c0]">
-          <p className="">THE BUBBLE HAS BURST</p>
-          <p className="text-[2rem] px-[2rem]">
-            The 2007 financial crisis caused the housing bubble to finally
-            burst,
-            <br />
-            leaving too many people either in debt, unemployed, without homes,
-            or all of the above. <br />
-            Some people never financially recovered and some people…well, they
-            became billionaires!
-          </p>
-          <a
-            href=""
-            className="text-[2rem] mt-[2rem] bg-[#be955c] p-[1rem] border-4"
-          >
-            Start Again
-          </a>
+        <div className=" text-center absolute top-0 w-full h-full flex flex-col items-center justify-center text-[8rem] z-[99] text-[#7ca1c0]">
+          <div className="bg-white p-[3rem] m-[2rem] text-center border-4 border-dkgrey">
+            <p className="">THE BUBBLE HAS BURST</p>
+            <p className="text-[2rem] px-[2rem]">
+              The 2007 financial crisis caused the housing bubble to finally
+              burst,
+              <br />
+              leaving too many people either in debt, unemployed, without homes,
+              or all of the above. <br />
+              Some people never financially recovered and some people…well, they
+              became billionaires!
+            </p>
+            <a
+              href=""
+              className="text-[2rem] mt-[2rem] bg-[#be955c] p-[1rem] border-4 text-dkgrey"
+            >
+              Start Again
+            </a>
+          </div>
         </div>
       ) : (
         <></>
