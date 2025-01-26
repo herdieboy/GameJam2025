@@ -56,31 +56,21 @@ export default function House({
       style={{
         top: top,
         left: left,
-        backgroundImage: `url(/${
-          isBought && !isUpgraded
-            ? style + "_owned"
-            : isUpgraded
-            ? style + "_upgraded"
-            : style
+        backgroundImage: `url(/${style}${
+          isBought ? (isUpgraded ? "_upgraded" : "_owned") : ""
         }.png)`,
       }}
     >
-      {isBought && isUpgraded ? (
-        <></>
-      ) : (
+      {!isBought || !isUpgraded ? (
         <div
           className={`invisible group-hover:visible text-center ${
-            !isBought && balance < cost
-              ? "bg-[#6f6776]"
-              : isBought && !isUpgraded && balance < upCost
-              ? "bg-[#6f6776]"
-              : "bg-white"
+            balance < (isBought ? upCost : cost) ? "bg-[#6f6776]" : "bg-white"
           } border-4 p-[0.5rem] m-auto`}
         >
-          <p>{!isBought ? "Buy: " + cost : "Upgrade: " + upCost}</p>
-          <p>Added Income: {!isBought ? houseIncome : upIncome}</p>
+          <p>{isBought ? "Upgrade: " + upCost : "Buy: " + cost}</p>
+          <p>Added Income: {isBought ? upIncome : houseIncome}</p>
         </div>
-      )}
+      ) : null}
     </div>
   );
 }

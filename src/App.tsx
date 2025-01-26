@@ -45,7 +45,7 @@ export default function App() {
         className="relative h-[720px] w-[1280px] text-[2rem] leading-none bg-[url(/map.png)] bg-contain cursor-default text-dkgrey select-none"
         style={{ transform: `scale(${divScale})` }}
       >
-        <audio id="background-musi" src={backgroundMusic} autoPlay loop />
+        <audio id="background-music" src={backgroundMusic} autoPlay loop />
         <Wallet />
 
         <House
