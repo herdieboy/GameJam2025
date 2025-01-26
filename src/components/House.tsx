@@ -4,6 +4,8 @@ import { useGlobalContext } from "../GlobalContext";
 interface HouseProps {
   cost: number;
   houseIncome: number;
+  upCost: number;
+  upIncome: number;
   top: string;
   left: string;
   style: string;
@@ -12,6 +14,8 @@ interface HouseProps {
 export default function House({
   cost,
   houseIncome,
+  upCost,
+  upIncome,
   top,
   left,
   style,
@@ -19,12 +23,23 @@ export default function House({
   const { balance, setBalance, income, setIncome, setDate, date } =
     useGlobalContext();
   const [isBought, setIsBought] = useState(false);
+  const [isUpgraded, setIsUpgraded] = useState(false);
 
   function clickHouse() {
     if (!isBought && balance >= cost) {
       setBalance(balance - cost + income);
       setIncome(income + houseIncome);
       setIsBought(true);
+
+      if (date.month === 12) {
+        setDate({ month: 1, year: date.year + 1 });
+      } else {
+        setDate({ month: date.month + 1, year: date.year });
+      }
+    } else if (isBought && !isUpgraded) {
+      setBalance(balance - upCost + income);
+      setIncome(income + upIncome);
+      setIsUpgraded(true);
 
       if (date.month === 12) {
         setDate({ month: 1, year: date.year + 1 });
@@ -41,17 +56,31 @@ export default function House({
       style={{
         top: top,
         left: left,
-        backgroundImage: `url(/${isBought ? style + "_owned" : style}.png)`,
+        backgroundImage: `url(/${
+          isBought && !isUpgraded
+            ? style + "_owned"
+            : isUpgraded
+            ? style + "_upgraded"
+            : style
+        }.png)`,
       }}
     >
-      <div
-        className={`invisible group-hover:visible text-center ${
-          balance < cost ? "bg-[#6f6776]" : "bg-white"
-        } border-4 p-[0.5rem] m-auto`}
-      >
-        <p>{!isBought ? "Buy: " + cost : "Owned"}</p>
-        <p>Rent Income: {houseIncome}</p>
-      </div>
+      {isBought && isUpgraded ? (
+        <></>
+      ) : (
+        <div
+          className={`invisible group-hover:visible text-center ${
+            !isBought && balance < cost
+              ? "bg-[#6f6776]"
+              : isBought && !isUpgraded && balance < upCost
+              ? "bg-[#6f6776]"
+              : "bg-white"
+          } border-4 p-[0.5rem] m-auto`}
+        >
+          <p>{!isBought ? "Buy: " + cost : "Upgrade: " + upCost}</p>
+          <p>Added Income: {!isBought ? houseIncome : upIncome}</p>
+        </div>
+      )}
     </div>
   );
 }

@@ -8,7 +8,7 @@ interface EventProps {
 
 export default function Event({ randomNumber, setShowEvent }: EventProps) {
   const { balance, setBalance } = useGlobalContext();
-  const eventNumber = randomNumber < 21 ? randomNumber : 0;
+  const eventNumber = randomNumber < 20 ? randomNumber : 0;
 
   function handleButton() {
     setBalance(balance + Values.events[eventNumber].result);

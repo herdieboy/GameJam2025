@@ -29,7 +29,8 @@ export default function Calendar() {
       setDate({ month: date.month + 1, year: date.year });
     }
     setBalance(balance + income);
-    setRandomNumber(Math.floor(Math.random() * 100));
+    setRandomNumber(Math.floor(Math.random() * 40));
+    console.log("random number" + randomNumber);
     if (randomNumber < 20) {
       setShowEvent(true);
     }
