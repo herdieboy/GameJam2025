@@ -19,7 +19,7 @@ export default function Wallet() {
       {balance < 0 ? (
         <div className="bg-dkgrey text-center absolute top-0 w-full h-full flex flex-col items-center justify-center text-[10rem] z-[99] text-[#9a4f50]">
           <p className="">GAME OVER</p>
-          <a href="" className="text-[2rem]">
+          <a href="" className="text-[2rem] bg-[#be955c] p-[1rem] border-4">
             Start Again
           </a>
         </div>
@@ -38,7 +38,10 @@ export default function Wallet() {
             Some people never financially recovered and some people…well, they
             became billionaires!
           </p>
-          <a href="" className="text-[2rem] mt-[2rem]">
+          <a
+            href=""
+            className="text-[2rem] mt-[2rem] bg-[#be955c] p-[1rem] border-4"
+          >
             Start Again
           </a>
         </div>

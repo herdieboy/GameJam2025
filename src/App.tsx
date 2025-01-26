@@ -7,6 +7,7 @@ import backgroundMusic from "/BubbleBurst.mp3";
 
 export default function App() {
   const [divScale, setDivScale] = useState(0);
+  const [audioPlayed, setAudioPlayed] = useState(false);
 
   useEffect(() => {
     function resizeScreen() {
@@ -28,16 +29,21 @@ export default function App() {
     };
   }, []);
 
-  useEffect(() => {
+  const handlePlayAudio = () => {
     const audio = document.getElementById(
       "background-music"
     ) as HTMLAudioElement;
     if (audio) {
-      audio.play().catch((error) => {
-        console.error("Audio playback failed:", error);
-      });
+      audio
+        .play()
+        .then(() => {
+          setAudioPlayed(true);
+        })
+        .catch((error) => {
+          console.error("Audio playback failed:", error);
+        });
     }
-  }, []);
+  };
 
   return (
     <GlobalProvider>
@@ -46,6 +52,25 @@ export default function App() {
         style={{ transform: `scale(${divScale})` }}
       >
         <audio id="background-music" src={backgroundMusic} autoPlay loop />
+        {!audioPlayed && (
+          <div className="absolute z-[99] w-full h-full flex justify-center items-center">
+            <div className="bg-white p-[2rem] m-[2rem] text-center">
+              <p>
+                The year is 2000 and you have been given an offer you can't
+                refuse...A bank loan for a mortgage of ß100,000 with no
+                security! It is time to buy and upgrade homes to build your
+                empire and hope the financial market stays stable and that this
+                bubble doesn't burst...
+              </p>
+              <button
+                onClick={handlePlayAudio}
+                className="play-button mt-[2rem] bg-[#be955c] p-[1rem] border-4 cursor-pointer"
+              >
+                Start playing!
+              </button>
+            </div>
+          </div>
+        )}
 
         <Wallet />
 
